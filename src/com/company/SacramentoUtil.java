@@ -140,5 +140,22 @@ public class SacramentoUtil {
         }
     }
 
+    //3
+    public static void getStreet(ArrayList<Crime> arrayList) {
+        //új arrayList melyben tárolni fogom a ST-et tartalamazó sorokat
+        ArrayList<Crime> adressStreet = new ArrayList<>();
+        //ha aegy adat adresse tartalmaz 'ST'-t akkor hozzáadom az ArrayListhez
+        for (Crime item: arrayList) {
+            if(item.getAddress().contains("ST")) {
+                adressStreet.add(item);
+            }
+        }
+        //kiíratás
+        System.out.println(adressStreet.size());
+        for (Crime crime : adressStreet){
+            System.out.println(crime);
+        }
+    }
+
 
 }

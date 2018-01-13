@@ -12,7 +12,7 @@ public class Main {
 
         //Crími példány létrehozása és setterek segítségével értékadás
         Crime crime = new Crime();
-        crime.setAddress("Pécs");
+        crime.setAddress(" Pecs ST");
         crime.setcDateTime("2017");
         crime.setDistrict(1);
         crime.setBeat("aaa");
@@ -46,7 +46,7 @@ public class Main {
         crimes.add(crime1);
 
         Crime crime2 = new Crime();
-        crime2.setAddress("Pécs");
+        crime2.setAddress("ST akarmi");
         crime2.setcDateTime("2017");
         crime2.setDistrict(2);
         crime2.setBeat("aaa");
@@ -61,5 +61,8 @@ public class Main {
 
         //függvényhívás
         SacramentoUtil.findBiggestGridByDistricts(crimes);
+
+        //3
+        SacramentoUtil.getStreet(crimes);
     }
 }

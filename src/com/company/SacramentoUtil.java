@@ -62,7 +62,7 @@ public class SacramentoUtil {
     }
 
     //1
-    public static void printCSVFromSacramentoList(ArrayList<Crime> arrayList,String destination) {
+    public static void printCSVFromSacramentoList(ArrayList<Crime> arrayList, String destination) {
         //vessző
         String comma = ",";
         //új sor
@@ -74,7 +74,7 @@ public class SacramentoUtil {
             fout = new FileOutputStream(destination + ".txt");
 
             //for each ciklussal bejárom az ArrayListet és beleírom az adatokat vesszővel elválasztva
-            for (Crime item : arrayList ) {
+            for (Crime item : arrayList) {
                 fout.write(item.getcDateTime().getBytes());
                 fout.write(comma.getBytes());
                 fout.write(item.getAddress().getBytes());
@@ -112,6 +112,31 @@ public class SacramentoUtil {
                     e.printStackTrace();
                 }
             }
+        }
+    }
+
+    //2
+    public static void findBiggestGridByDistricts(ArrayList<Crime> arrayList) {
+        //új arrayList melyben tárolni fogom a maximum griddel rendelkező elemeket disctricktenként
+        ArrayList<Crime> maximums = new ArrayList<>();
+        //a for ciklus 6-ig megy, mert az alegnagyobb disctrickt
+        for (int i = 1; i <= 6; i++) {
+            Integer max = 0;
+            for (Crime item : arrayList) {
+                //kiválasztom ebben a ciklusban melyik districre figyelek
+                if (item.getDistrict() == i) {
+                    //eltárolom,növelem maximumot
+                    if (item.getGrid() > max) {
+                        max = item.getGrid();
+                        maximums.add(item);
+                    }
+                }
+            }
+        }
+        //kiíratás
+        System.out.println(maximums.size());
+        for (Crime crime : maximums){
+            System.out.println(crime);
         }
     }
 

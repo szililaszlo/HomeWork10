@@ -157,5 +157,17 @@ public class SacramentoUtil {
         }
     }
 
+    //4
+    public static int countCrimeType(ArrayList<Crime> arrayList, String type) {
+        int counter = 0;
+
+        for (Crime crime : arrayList) {
+            if (crime.getCrimeDescr().toLowerCase().contains(type)) {
+                counter++;
+            }
+        }
+
+        return counter;
+    }
 
 }

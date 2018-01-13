@@ -17,7 +17,7 @@ public class Main {
         crime.setDistrict(1);
         crime.setBeat("aaa");
         crime.setGrid(42144);
-        crime.setCrimeDescr("asdsa");
+        crime.setCrimeDescr("thief");
         crime.setUcrNcicCode(222222);
         crime.setLatitude(222.2F);
         crime.setLongtitude(22224.2F);
@@ -37,7 +37,7 @@ public class Main {
         crime1.setDistrict(2);
         crime1.setBeat("aaa");
         crime1.setGrid(4214);
-        crime1.setCrimeDescr("asdsa");
+        crime1.setCrimeDescr("murder");
         crime1.setUcrNcicCode(222222);
         crime1.setLatitude(222.2F);
         crime1.setLongtitude(22224.2F);
@@ -51,7 +51,7 @@ public class Main {
         crime2.setDistrict(2);
         crime2.setBeat("aaa");
         crime2.setGrid(414);
-        crime2.setCrimeDescr("asdsa");
+        crime2.setCrimeDescr("murder");
         crime2.setUcrNcicCode(222222);
         crime2.setLatitude(222.2F);
         crime2.setLongtitude(22224.2F);
@@ -64,5 +64,7 @@ public class Main {
 
         //3
         SacramentoUtil.getStreet(crimes);
+        //4
+        System.out.println(SacramentoUtil.countCrimeType(crimes,"thief"));
     }
 }

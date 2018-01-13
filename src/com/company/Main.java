@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-	//1
+        //1
 
         //Crime típusú arrayList a teszteléshez
         ArrayList<Crime> crimes = new ArrayList<>();

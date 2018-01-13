@@ -63,56 +63,56 @@ public class SacramentoUtil {
 
     //1
     public static void printCSVFromSacramentoList(ArrayList<Crime> arrayList,String destination) {
-            //vessző
-            String comma = ",";
-            //új sor
-            String newLine = "\n";
-            // fout változó inicializálása
-            FileOutputStream fout = null;
-            try {
-                // fájl mentési hely megadás és típus megadás
-                fout = new FileOutputStream(destination + ".txt");
+        //vessző
+        String comma = ",";
+        //új sor
+        String newLine = "\n";
+        // fout változó inicializálása
+        FileOutputStream fout = null;
+        try {
+            // fájl mentési hely megadás és típus megadás
+            fout = new FileOutputStream(destination + ".txt");
 
-                //for each ciklussal bejárom az ArrayListet és beleírom az adatokat vesszővel elválasztva
-                for (Crime item : arrayList ) {
-                    fout.write(item.getcDateTime().getBytes());
-                    fout.write(comma.getBytes());
-                    fout.write(item.getAddress().getBytes());
-                    fout.write(comma.getBytes());
-                    fout.write(String.valueOf(item.getDistrict()).getBytes());
-                    fout.write(comma.getBytes());
-                    fout.write(item.getBeat().getBytes());
-                    fout.write(comma.getBytes());
-                    fout.write(String.valueOf(item.getGrid()).getBytes());
-                    fout.write(comma.getBytes());
-                    fout.write(item.getCrimeDescr().getBytes());
-                    fout.write(comma.getBytes());
-                    fout.write(String.valueOf(item.getUcrNcicCode()).getBytes());
-                    fout.write(comma.getBytes());
-                    fout.write(String.valueOf(item.getLatitude()).getBytes());
-                    fout.write(comma.getBytes());
-                    fout.write(String.valueOf(item.getLongtitude()).getBytes());
-                    fout.write(newLine.getBytes());
-                }
+            //for each ciklussal bejárom az ArrayListet és beleírom az adatokat vesszővel elválasztva
+            for (Crime item : arrayList ) {
+                fout.write(item.getcDateTime().getBytes());
+                fout.write(comma.getBytes());
+                fout.write(item.getAddress().getBytes());
+                fout.write(comma.getBytes());
+                fout.write(String.valueOf(item.getDistrict()).getBytes());
+                fout.write(comma.getBytes());
+                fout.write(item.getBeat().getBytes());
+                fout.write(comma.getBytes());
+                fout.write(String.valueOf(item.getGrid()).getBytes());
+                fout.write(comma.getBytes());
+                fout.write(item.getCrimeDescr().getBytes());
+                fout.write(comma.getBytes());
+                fout.write(String.valueOf(item.getUcrNcicCode()).getBytes());
+                fout.write(comma.getBytes());
+                fout.write(String.valueOf(item.getLatitude()).getBytes());
+                fout.write(comma.getBytes());
+                fout.write(String.valueOf(item.getLongtitude()).getBytes());
+                fout.write(newLine.getBytes());
+            }
 
-                // catch amely kezeli a hibát ha  a fájl nem található
-            } catch (FileNotFoundException e) {
-                System.err.println(e.getMessage());
-                //általános hiba elkapás
-            } catch (Exception e) {
-                System.err.println(e.getMessage());
-            } finally {
-                // if ág azért hogy ne legyen nullPointer hiba
-                if (fout != null) {
-                    try {
-                        //file kapcsolat lezárás
-                        fout.close();
-                    } catch (IOException e) {
-                        //ha hiba lépne fel lezárás során az itt kezelhető
-                        e.printStackTrace();
-                    }
+            // catch amely kezeli a hibát ha  a fájl nem található
+        } catch (FileNotFoundException e) {
+            System.err.println(e.getMessage());
+            //általános hiba elkapás
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        } finally {
+            // if ág azért hogy ne legyen nullPointer hiba
+            if (fout != null) {
+                try {
+                    //file kapcsolat lezárás
+                    fout.close();
+                } catch (IOException e) {
+                    //ha hiba lépne fel lezárás során az itt kezelhető
+                    e.printStackTrace();
                 }
             }
+        }
     }
 
 
